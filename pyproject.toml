@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "Openteens Forum Backend"
+version = "0.0.0"
+description = ""
+authors = ["cxzlw <wsc_zds@qq.com>"]
+readme = "README.md"
+packages = [{include = "openteens_forum_backend"}]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.110.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
