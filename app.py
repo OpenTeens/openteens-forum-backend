@@ -11,4 +11,5 @@ def index():
 if __name__ == '__main__':
     # Run the application of debug mode
     import uvicorn
-    uvicorn.run(app, host="127.0.0.1", port=8000, reload=True)
+
+    uvicorn.run(app, host="127.0.0.1", port=41268, reload=True)
