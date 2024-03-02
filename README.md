@@ -4,13 +4,13 @@
 
 ### 用户相关
 
-- `/registery` 用户注册
+- `/register` 用户注册
 - `/login` 用户登录
 - 
 
 #### 用户注册
 
-POST `/v1/user/registery`
+POST `/v1/user/register`
 
 传入用户名、密码、邮箱、邮箱验证码。
 
@@ -39,5 +39,3 @@ POST `/v1/user/login`
 6. 创建Token
 7. Token储存进数据库
 8. 返回Token
-
-
