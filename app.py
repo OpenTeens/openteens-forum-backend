@@ -1,3 +1,4 @@
+import uvicorn
 from fastapi import FastAPI
 
 app = FastAPI()
@@ -9,4 +10,5 @@ def index():
 
 
 if __name__ == '__main__':
-    pass
+    # Run the application of debug mode
+    uvicorn.run(app, host="127.0.0.1", port=8000, debug=True)
