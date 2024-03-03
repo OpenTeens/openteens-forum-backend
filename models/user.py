@@ -1,18 +1,21 @@
-from sqlalchemy import Column, Integer, String
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relationship
+from sqlalchemy import Integer, String
+from sqlalchemy.orm import Mapped, mapped_column
 
-Base = declarative_base()
+from .db import Base
 
 
 class User(Base):
     __tablename__ = "users"
 
-    id = Column(Integer, primary_key=True, index=True)
-    username = Column(String, unique=True, index=True)
-    email = Column(String, unique=True, index=True)
-    hashed_password = Column(String)
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
+    username: Mapped[str] = mapped_column(String, unique=True, index=True)
+    password: Mapped[str]
 
-    # 下面是关于用户的其他属性，例如头像、介绍等
-    # avatar_url = Column(String)
-    # bio = Column(String)
+    def __repr__(self):
+        return f"User(@{self.username})"
+
+# email = mapped_column(String, unique=True, index=True)
+
+# 下面是关于用户的其他属性，例如头像、介绍等
+# avatar_url = Column(String)
+# bio = Column(String)
