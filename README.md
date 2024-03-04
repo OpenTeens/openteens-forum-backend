@@ -1,4 +1,4 @@
-# OpenTeens 网站后端
+# OpenTeens 论坛后端
 
 ## API接口
 
@@ -6,7 +6,6 @@
 
 - `/register` 用户注册
 - `/login` 用户登录
-- 
 
 #### 用户注册
 
