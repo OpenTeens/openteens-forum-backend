@@ -6,10 +6,13 @@ from fastapi import FastAPI, Response
 
 from sqlalchemy import select, create_engine
 
+from configs import Configs
 from models import Base, User
 
 app = FastAPI()
-engine = create_engine("sqlite+pysqlite:///db.sqlite", echo=True)
+config = Configs()
+
+engine = create_engine(config.db_url, echo=True)
 
 Base.metadata.create_all(engine)
 
@@ -74,4 +77,4 @@ if __name__ == '__main__':
     # Run the application of debug mode
     import uvicorn
 
-    uvicorn.run(app, host="127.0.0.1", port=41271)
+    uvicorn.run(app, host=config.host, port=config.port)
